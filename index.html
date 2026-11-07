@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Простое дерево</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background-color: #2c3e50;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .content {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #bdc3c7;
+        }
+
+        .canvas {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            height: 600px;
+            width: 100%;
+        }
+
+        .tree {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .trunk, .branch {
+            border-radius: 10px;
+            background-color: #5d4037;
+        }
+
+        .trunk {
+            position: relative;
+            width: 14px;
+            height: 450px;
+            margin-top: 100px;
+        }
+
+        .branch {
+            position: absolute;
+            width: 7px;
+            transform-origin: bottom center;
+        }
+
+        .branch:nth-child(even) {
+            transform: rotate(50deg);
+        }
+
+        .branch:nth-child(odd) {
+            transform: rotate(-50deg);
+        }
+
+        .branch:nth-child(1) { top: 180px; height: 170px; }
+        .branch:nth-child(2) { top: 150px; height: 150px; }
+        .branch:nth-child(3) { top: 120px; height: 130px; }
+        .branch:nth-child(4) { top: 90px; height: 110px; }
+        .branch:nth-child(5) { top: 60px; height: 90px; }
+        .branch:nth-child(6) { top: 30px; height: 70px; }
+
+        .leaf {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50% 0 50% 0;
+            background-color: #aed581;
+        }
+
+        .leaf:nth-child(1) { top: 10px; animation-delay: 2.5s; }
+        .leaf:nth-child(2) { top: 35px; animation-delay: 2.0s; }
+        .leaf:nth-child(3) { top: 60px; animation-delay: 1.5s; }
+        .leaf:nth-child(4) { top: 85px; animation-delay: 1.0s; }
+
+        .leaf:nth-child(odd) {
+            left: 100%;
+            transform-origin: 0% 100%;
+            animation-name: leaf-odd-grow;
+            animation-duration: 1.5s;
+            animation-fill-mode: both;
+        }
+
+        .leaf:nth-child(even) {
+            left: -200%;
+            transform-origin: 50% 100%;
+            animation-name: leaf-even-grow;
+            animation-duration: 1.5s;
+            animation-fill-mode: both;
+        }
+
+        .fruit {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: #e74c3c;
+            left: -100%;
+            top: 45px;
+            animation-name: fruit-grow;
+            animation-duration: 1s;
+            animation-delay: 3s;
+            animation-fill-mode: both;
+        }
+
+        @keyframes leaf-odd-grow {
+            0% { transform: scale(0); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes leaf-even-grow {
+            0% { transform: rotate(-90deg) scale(0); }
+            100% { transform: rotate(-90deg) scale(1); }
+        }
+
+        @keyframes fruit-grow {
+            0% { transform: scale(0); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content">
+        <h1>Анимация на чистом CSS</h1>
+        <p>Дерево, которое растет с помощью keyframes</p>
+    </div>
+
+    <div class="canvas">
+        <div class="tree">
+            <div class="trunk">
+                <div class="branch">
+                    <div class="leaf"></div>
+                    <div class="leaf"></div>
+                    <div class="leaf"></div>
+                    <div class="leaf"></div>
+                    <div class="fruit"></div>
+                </div>
+                <div class="branch">
+                    <div class="leaf"></div>
+                    <div class="leaf"></div>
+                    <div class="leaf"></div>
+                    <div class="leaf"></div>
+                    <div class="fruit"></div>
+                </div>
+                <div class="branch">
+                    <div class="leaf"></div>
+                    <div class="leaf"></div>
+                    <div class="leaf"></div>
+                    <div class="leaf"></div>
+                    <div class="fruit"></div>
+                </div>
+                <div class="branch">
+                    <div class="leaf"></div>
+                    <div class="leaf"></div>
+                    <div class="leaf"></div>
+                    <div class="leaf"></div>
+                    <div class="fruit"></div>
+                </div>
+                <div class="branch">
+                    <div class="leaf"></div>
+                    <div class="leaf"></div>
+                    <div class="leaf"></div>
+                    <div class="leaf"></div>
+                    <div class="fruit"></div>
+                </div>
+                <div class="branch">
+                    <div class="leaf"></div>
+                    <div class="leaf"></div>
+                    <div class="leaf"></div>
+                    <div class="leaf"></div>
+                    <div class="fruit"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
